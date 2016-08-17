@@ -1,8 +1,8 @@
-# IoT sensors
+# IoT sensors.
 
 Code to handle different sensors using Arduino and other boards.
 
-## Sensor implemented
+## Sensor implemented.
 
 - lm35 - Temperature sensor (C++)
 
