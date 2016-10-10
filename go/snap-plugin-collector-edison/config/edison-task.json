@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "schedule": {
+        "type": "simple",
+        "interval": "5s"
+    },
+    "max-failures": 10,
+    "workflow": {
+        "collect": {
+            "metrics": {
+                "/intel/edison/temperature": {},
+                "/intel/edison/light": {}
+            },
+            "config": {},
+            "process": [
+            {
+                "plugin_name": "passthru",
+                "process": null,
+                "publish": [
+                {
+                    "plugin_name": "file",
+                    "config": {
+                         "file": "/tmp/edison-log"
+                    }
+                }
+                ]
+            }
+            ]
+        }
+    }
+}
