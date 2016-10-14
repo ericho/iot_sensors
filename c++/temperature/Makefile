@@ -1,0 +1,24 @@
+#
+# Copyright (c) 2016 Intel, Inc. All rights reserved.
+# $COPYRIGHT$
+#
+# Additional copyrights may follow
+#
+# $HEADER$
+#
+
+SENSORPLUGIN=temp
+PLUGINPREFIX=libudplugin_
+CXX=g++
+SENSYSPATH=/opt/orcm
+PLUGININSTALLPATH=$(SENSYSPATH)/lib/openmpi
+CXXFLAGS=-O3 -fPIC -I$(SENSYSPATH)/include/openmpi -I/usr/include/upm
+LDFLAGS=-L$(SENSYSPATH)/lib -shared -rdynamic -lsensysplugins -lupm-grove
+
+all:
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) mysensor.cpp -o $(PLUGINPREFIX)$(SENSORPLUGIN).so
+install: all
+	install $(PLUGINPREFIX)$(SENSORPLUGIN).so $(PLUGININSTALLPATH)
+
+clean:
+	-rm *.so
