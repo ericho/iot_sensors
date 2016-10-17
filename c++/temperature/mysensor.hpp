@@ -1,12 +1,3 @@
-/*
- * Copyright (c) 2016 Intel, Inc. All rights reserved.
- * $COPYRIGHT$
- *
- * Additional copyrights may follow
- *
- * $HEADER$
- */
-
 #include "orcm/common/udsensors.h"
 
 class mySensor : public UDSensor
